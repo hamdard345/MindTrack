@@ -13,7 +13,7 @@ function Navbar() {
           display: "flex",
           justifyContent: "space-between",
           background:
-            "linear-gradient(180deg, rgba(241, 39, 17, 0.85) 0%, rgba(245, 175, 25, 0.85) 70%, transparent 100%)",
+            "linear-gradient(to bottom, #431a21 0%, #242424 50%, #3c1545  100%)",
           boxShadow: "none", // Optional: remove shadow for a flatter appearance
           color: "white",
           

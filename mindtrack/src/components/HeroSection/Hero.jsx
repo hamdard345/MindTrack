@@ -10,7 +10,7 @@ const Hero = () => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
     textAlign: 'center',
-    height: '100vh',
+    height: '600px',
   };
 
   const overlayStyles = {
@@ -19,7 +19,7 @@ const Hero = () => {
     left: 0,
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.7)', // Darker overlay for better readability
+    backgroundColor: 'rgba(0, 0, 0, 0.2)', // Darker overlay for better readability
   };
 
   const contentBoxStyles = {
@@ -38,13 +38,16 @@ const Hero = () => {
     display: 'inline-block', // Wrap background to the content of the text
     margin: '0 auto', // Center the text block
     maxWidth: '80%', // Don't let the text span the full width of its container
+    fontSize: '1.6rem', 
+    lineHeight: '1.6', 
+    
   };
 
   return (
     <Container maxWidth={false} style={heroStyles}>
       <Box style={overlayStyles} />
       <Box style={contentBoxStyles}>
-        <Typography variant="h4" component="h2" gutterBottom>
+        <Typography variant="h4" component="h2" gutterBottom sx={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.9)' }}>
         Mind Track: Balance your Day, Enrich Your Mind
         </Typography>
         <Typography  style={textStyle} gutterBottom>
