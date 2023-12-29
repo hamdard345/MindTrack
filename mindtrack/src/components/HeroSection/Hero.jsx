@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Typography, Button, Container } from '@mui/material';
 import heroImage from '../../assets/images/hero.png';
 
 const Hero = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Check the window width to determine if it's a mobile device
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 700); // Adjust the width as needed
+    };
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Initial check on component mount
+    handleResize();
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const heroStyles = {
     position: 'relative',
     backgroundImage: `url(${heroImage})`,
@@ -24,33 +44,41 @@ const Hero = () => {
 
   const contentBoxStyles = {
     position: 'relative',
+    zIndex: 2,
     paddingTop: '64px',
     paddingBottom: '64px',
-    zIndex: 2,
+    textAlign: 'center',
   };
 
   const textStyle = {
-    color: 'white', // Ensuring contrast
-    textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)', // Text shadow for better readability
-    backgroundColor: 'rgba(0, 0, 0, 0.3)', // Semi-transparent background for text
-    padding: '16px', // Spacing inside the text background
-    borderRadius: '4px', // Optional: rounded corners for the text background
-    display: 'inline-block', // Wrap background to the content of the text
-    margin: '0 auto', // Center the text block
-    maxWidth: '80%', // Don't let the text span the full width of its container
-    fontSize: '1.6rem', 
-    lineHeight: '1.6', 
-    
+    color: 'white',
+    textShadow: '0 2px 4px rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    padding: '16px',
+    borderRadius: '4px',
+    display: 'inline-block',
+    maxWidth: '80%',
+    fontSize: '1.6rem',
+    lineHeight: '1.6',
+    margin: '0 auto',
   };
+
+  if (isMobile) {
+    contentBoxStyles.paddingTop = '0'; // Remove top padding on mobile
+    contentBoxStyles.marginTop = 'auto'; // Push content to the bottom on mobile
+    textStyle.lineHeight = '1.2';
+    textStyle.fontSize = '1.2rem';
+
+  }
 
   return (
     <Container maxWidth={false} style={heroStyles}>
       <Box style={overlayStyles} />
       <Box style={contentBoxStyles}>
         <Typography variant="h4" component="h2" gutterBottom sx={{ textShadow: '0 2px 4px rgba(0, 0, 0, 0.9)' }}>
-        Mind Track: Balance your Day, Enrich Your Mind
+          Mind Track: Balance your Day, Enrich Your Mind
         </Typography>
-        <Typography  style={textStyle} gutterBottom>
+        <Typography style={textStyle} gutterBottom>
           Welcome to MindTrack, where productivity meets mental well-being. Our intuitive web application, built on the Healthy Mind Platter framework, simplifies tracking your daily activities for a balanced life. Discover a new level of self-improvement with MindTrack's easy-to-use tools, including efficient activity recording, real-time progress tracking, and detailed analytics reports. Embrace a better you with MindTrack today!
         </Typography>
       </Box>
