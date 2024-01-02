@@ -20,8 +20,8 @@ To set up MindTrack locally:
 ## Usage
 Instructions on how to use the application, including any available features.
 
-## Unit Testing with vitest
-MindTrack utilizes vitest for unit testing to ensure code quality and functionality.
+## Unit Testing with Vitest and @testing-library/react
+MindTrack uses Vitest for unit testing and @testing-library/react for testing React components, ensuring robust and reliable code.
 
 
 ## Contributing
