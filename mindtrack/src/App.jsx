@@ -1,15 +1,18 @@
-import Hero from "./components/HeroSection/Hero"
-import CardComponent from "./components/cards/CardComponent"
-import Navbar from "./components/navigation/Navbar"
+import Layout from "./layout/Layout";
+import { Routes, Route } from "react-router-dom";
+import Track from "./components/track/Track";
+import Home from "./components/homepage/Home";
 function App() {
-  
   return (
     <>
-     <Navbar/>
-     <Hero/>
-     <CardComponent/>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/track" element={<Track />} />
+        </Routes>
+      </Layout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
