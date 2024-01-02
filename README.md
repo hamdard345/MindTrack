@@ -20,8 +20,8 @@ To set up MindTrack locally:
 ## Usage
 Instructions on how to use the application, including any available features.
 
-## Unit Testing with Jest
-MindTrack utilizes Jest for unit testing to ensure code quality and functionality.
+## Unit Testing with vitest
+MindTrack utilizes vitest for unit testing to ensure code quality and functionality.
 
 
 ## Contributing
