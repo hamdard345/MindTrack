@@ -1,14 +1,14 @@
 import MenuIcon from '@mui/icons-material/Menu';
-import IconButton from '@mui/material/IconButton';
-import Icon from '@mui/material/Icon';
+import { Tab, Tabs } from '@mui/material';
 
 const NavbarIcon = () => {
   return (
-    <IconButton>
-    <Icon sx={{ color:"white" }}>
-      <MenuIcon/>
-    </Icon>
-  </IconButton>
+    <Tabs>
+      <Tab sx={{ color:"white" }}
+           icon={<MenuIcon/>} label ="Menu"
+      />
+    
+  </Tabs>
   );
 };
 

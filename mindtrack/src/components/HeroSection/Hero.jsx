@@ -1,27 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Typography, Button, Container } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import heroImage from '../../assets/images/hero.png';
-
+import useIsMobile from '../../hooks/useIsMobile';
 const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    // Check the window width to determine if it's a mobile device
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 700); // Adjust the width as needed
-    };
-
-    // Add event listener for window resize
-    window.addEventListener('resize', handleResize);
-
-    // Initial check on component mount
-    handleResize();
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const isMobile = useIsMobile();
 
   const heroStyles = {
     position: 'relative',
