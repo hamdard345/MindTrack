@@ -3,6 +3,7 @@ import { Tabs, Tab } from "@mui/material";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import InsightsIcon from "@mui/icons-material/Insights";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useNavigate, useLocation } from "react-router-dom";
 /**
  * NavbarTabs Component
@@ -29,6 +30,9 @@ const NavbarTabs = () => {
       case "/track":
         setValue(0); // Set active tab for '/track'
         break;
+        case "/signup":
+          setValue(3); // Set active tab for '/track'
+          break;
       // Add cases for other paths
       default:
         setValue(false); // Default, no tab selected
@@ -42,6 +46,9 @@ const NavbarTabs = () => {
     setValue(newValue);
     if (newValue === 0) {
       navigate("/track");
+    }
+    if (newValue === 3) {
+      navigate("/signup");
     }
   };
   const selectedTabStyle = {
@@ -67,6 +74,7 @@ const NavbarTabs = () => {
         label="Activity Log"
       />
       <Tab value={2} sx={tabStyle} icon={<InsightsIcon />} label="Insights " />
+      <Tab value={3} sx={tabStyle} icon={<AccountCircleIcon />} label="Account" />
     </Tabs>
   );
 };
