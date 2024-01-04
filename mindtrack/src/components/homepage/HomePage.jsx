@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../HeroSection/Hero";
 import CardComponent from "../cards/CardComponent";
 
-function Home() {
+function HomePage() {
   return (
     <>
       <Hero />
@@ -11,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;

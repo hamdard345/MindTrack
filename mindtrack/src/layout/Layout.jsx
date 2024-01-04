@@ -7,7 +7,7 @@ import Navbar from '../components/navigation/Navbar'
  * Props:
  * - children: ReactNode - The content to be displayed within the layout. This can be any React component or JSX.
  */
-const Layout = ({ children }) =>{
+const Layout = ({ children  }) =>{
   return (
     <>
     <Navbar/>

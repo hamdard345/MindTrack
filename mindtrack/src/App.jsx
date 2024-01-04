@@ -1,8 +1,8 @@
 import Layout from "./layout/Layout";
 import { Routes, Route } from "react-router-dom";
 import Track from "./components/track/Track";
-import Home from "./components/homepage/Home";
-import Signup from './components/login/Signup'
+import Home from "./components/homepage/HomePage";
+import Signup from "./components/login/Signup";
 function App() {
   return (
     <>
@@ -11,7 +11,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/track" element={<Track />} />
           <Route path="/signup" element={<Signup />} />
-
         </Routes>
       </Layout>
     </>

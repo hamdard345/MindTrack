@@ -1,6 +1,6 @@
 import Logo from "./Logo";
 import NavbarTabs from "./NavBarTabs";
-import NavbarIcon from "./NabarIcon";
+import MobileMenu from "./MobileMenu";
 import useIsMobile from "../../hooks/useIsMobile";
 import { AppBar, Box, Toolbar } from "@mui/material";
 
@@ -22,7 +22,7 @@ function Navbar() {
             <Box sx={{ display: 'flex', flexGrow: 1, justifyContent: 'center' }}>
               <Logo />
             </Box>
-            <NavbarIcon />
+            <MobileMenu />
           </>
         ) : (
           <>
